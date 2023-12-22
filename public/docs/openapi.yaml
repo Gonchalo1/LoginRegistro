@@ -1,0 +1,333 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:8000'
+paths:
+  /api/v1/perfil:
+    get:
+      summary: ''
+      operationId: getApiV1Perfil
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1Perfil
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: nostrum
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: fdietrich@example.com
+                current_password:
+                  type: string
+                  description: ''
+                  example: dignissimos
+                password:
+                  type: string
+                  description: ''
+                  example: sint
+              required:
+                - name
+                - email
+                - current_password
+                - password
+      security: []
+  /api/v1/auth/logout:
+    post:
+      summary: ''
+      operationId: postApiV1AuthLogout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/alquileres/inicio:
+    post:
+      summary: ''
+      operationId: postApiV1AlquileresInicio
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                bicicleta_id:
+                  type: integer
+                  description: ''
+                  example: 13
+              required:
+                - bicicleta_id
+      security: []
+  '/api/v1/alquileres/finalizar/{alquiler_id}':
+    put:
+      summary: ''
+      operationId: putApiV1AlquileresFinalizarAlquiler_id
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: alquiler_id
+        description: 'The ID of the alquiler.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/v1/alquileres:
+    get:
+      summary: ''
+      operationId: getApiV1Alquileres
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/bicicletas:
+    get:
+      summary: 'Display a listing of the resource.'
+      operationId: displayAListingOfTheResource
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                modelo:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: svgbdnhmagyttekeknrzovnv
+                marca:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: to
+                precio_por_hora:
+                  type: integer
+                  description: 'Must be at least 0.'
+                  example: 17
+              required:
+                - modelo
+                - marca
+                - precio_por_hora
+      security: []
+  '/api/v1/bicicletas/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      operationId: displayTheSpecifiedResource
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: 'Update the specified resource in storage.'
+      operationId: updateTheSpecifiedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                modelo:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: u
+                marca:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: twty
+                precio_por_hora:
+                  type: integer
+                  description: 'Must be at least 2.'
+                  example: 63
+              required:
+                - modelo
+                - marca
+                - precio_por_hora
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the bicicleta.'
+        example: 8
+        required: true
+        schema:
+          type: integer
+  /api/v1/auth/registro:
+    post:
+      summary: ''
+      operationId: postApiV1AuthRegistro
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: mduxinyoius
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: harold.ankunding@example.net
+                password:
+                  type: string
+                  description: ''
+                  example: minima
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/v1/auth/login:
+    post:
+      summary: ''
+      operationId: postApiV1AuthLogin
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: darrick82@example.org
+                password:
+                  type: string
+                  description: ''
+                  example: repellendus
+              required:
+                - email
+                - password
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
