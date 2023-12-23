@@ -4,7 +4,7 @@
     "scripts": {
         "dev": "vite",
         "start": "yarn start",
-        "build": "yarn; yarn build"
+           "build": "vite build"
     },
     "devDependencies": {
         "axios": "^1.6.1",
