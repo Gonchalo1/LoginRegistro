@@ -3,6 +3,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
+        "start": "yarn start",
         "build": "yarn; yarn build"
     },
     "devDependencies": {
