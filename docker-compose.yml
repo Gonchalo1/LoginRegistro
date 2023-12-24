@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres # o cualquier servicio de base de datos que estés utilizando
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: LaravelTest
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: gatanovia
