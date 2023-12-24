@@ -3,7 +3,8 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build"
+        "start": "yarn start",
+    "build": "yarn;s yarn build"
     },
     "devDependencies": {
         "axios": "^1.6.1",
